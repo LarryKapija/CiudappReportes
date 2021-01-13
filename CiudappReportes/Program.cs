@@ -1,23 +1,24 @@
+using CiudappReportes.Constants;
+using CiudappReportes.Models;
+using CiudappReportes.Services;
+using CiudappReportes.Services.Classes;
+using CiudappReportes.Services.Interfaces;
 using CiudappReportes.Views;
+using CiudappReportes.Views.Admin;
+using CiudappReportes.Views.Technical;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Windows.Forms;
-using CiudappReportes.ViewModels;
-using CiudappReportes.Views.Admin;
-using CiudappReportes.Views.Technical;
-using CiudappReportes.Services;
-
 namespace CiudappReportes
 {
     static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
+        /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -26,19 +27,28 @@ namespace CiudappReportes
 
             using (var serviceProvider = services.BuildServiceProvider())
             {
-                var loginPage = serviceProvider.GetRequiredService<LogInPage>();
-                var alp = serviceProvider.GetRequiredService<AdminLoginPage>();
-                Application.Run(alp);
+                var loginPage = serviceProvider.GetRequiredService<MainPage>();
+                Application.Run(loginPage);
             }
-
-           
         }
+
         private static void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<LogInPage>()
+            services
+                .AddScoped<IAlert, Alert>()
+                .AddScoped<IEncrypt, Encrypt>()
+                .AddScoped<IAutentication, Autentication>()
+
+            #region views
+                .AddSingleton<MainPage>()
                 .AddScoped<AdminLoginPage>()
+                .AddScoped<AdminProfilePage>()
                 .AddScoped<TechnicalLoginPage>()
-                .AddScoped<IAlert,Alert>();
+                .AddScoped<TechnicalProfilePage>()
+            #endregion
+
+                .AddSingleton<Session>();
+
         }
     }
 }

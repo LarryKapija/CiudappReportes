@@ -1,32 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+﻿using CiudappReportes.Constants;
+using CiudappReportes.Services;
+using CiudappReportes.Services.Classes;
+using CiudappReportes.Services.Interfaces;
+using System;
 using System.Windows.Forms;
 
 namespace CiudappReportes.Views.Technical
 {
     public partial class TechnicalLoginPage : Form
     {
-        public TechnicalLoginPage()
+        Encrypt encrypt;
+        Alert alert;
+        Autentication autentication;
+        TechnicalProfilePage tpp;
+
+        public TechnicalLoginPage(IEncrypt encrypt, IAlert alert, IAutentication autentication, TechnicalProfilePage tpp)
         {
             InitializeComponent();
+            this.encrypt = (Encrypt)encrypt;
+            this.alert = (Alert)alert;
+            this.autentication = (Autentication)autentication;
+            this.tpp = tpp;
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void XButton_Click(object sender, EventArgs e)
         {
-            LogInPage lp = new LogInPage();
-            lp.Show();
             this.Close();
         }
 
-        private void btnSignIn_Click(object sender, EventArgs e)
+        private async void SignInButton_Click(object sender, EventArgs e)
         {
-            this.Close();
-            TechnicalProfilePage tpp = new TechnicalProfilePage();
-            tpp.Show();
+            string sPass = encrypt.GetSHA256(entryPassword.Text.Trim());
+
+            if (entryUserName.Text == null || sPass == null)
+            {
+                await alert.DisplayAlert(Messages.LoginEmpty, Messages.ERROR);
+            }
+            else
+            {
+                /*if (autentication.AdminAutentication(entryUserName.Text, sPass))
+                {
+                    await alert.DisplayAlert(Messages.Welcome, Messages.Authentication);
+                    this.Hide();
+                    tpp.FormClosed += (s, args) => this.Close();
+                    tpp.Show();
+                }
+                else
+                {
+                    await alert.DisplayAlert(Messages.WrongUser, Messages.ERROR);
+                }*/
+            }
+
         }
     }
 }

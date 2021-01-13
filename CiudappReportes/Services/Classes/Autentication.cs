@@ -8,7 +8,8 @@ namespace CiudappReportes.Services.Classes
 {
     public class Autentication : IAutentication
     {
-        public bool AdminAutentication(string userEmail, string password)
+        
+        public bool SignInAutentication(string userEmail, string password)
         {
             try
             {
@@ -38,6 +39,7 @@ namespace CiudappReportes.Services.Classes
             }
             catch (System.Exception e)
             {
+                MessageBox.Show(e.Message, "ERROR");
                 return false;
             }
         }

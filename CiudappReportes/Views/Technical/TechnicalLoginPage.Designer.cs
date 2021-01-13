@@ -102,11 +102,11 @@ namespace CiudappReportes.Views.Technical
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
             this.label2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(35, 156);
+            this.label2.Location = new System.Drawing.Point(41, 156);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 39);
+            this.label2.Size = new System.Drawing.Size(161, 39);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Nombre de usuario";
+            this.label2.Text = "Correo electrónico";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // entryPassword

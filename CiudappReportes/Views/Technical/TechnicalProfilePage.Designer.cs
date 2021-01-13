@@ -43,6 +43,10 @@ namespace CiudappReportes.Views.Technical
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.CreateReportButton = new System.Windows.Forms.Button();
             this.AllReportsButton = new System.Windows.Forms.Button();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblNoCarnet = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -78,12 +82,12 @@ namespace CiudappReportes.Views.Technical
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 30F);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 30F);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(91, 234);
+            this.label3.Location = new System.Drawing.Point(88, 234);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 17, 0);
-            this.label3.Size = new System.Drawing.Size(227, 79);
+            this.label3.Size = new System.Drawing.Size(230, 79);
             this.label3.TabIndex = 8;
             this.label3.Text = "No Carnet:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,12 +96,12 @@ namespace CiudappReportes.Views.Technical
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 30F);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 30F);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(150, 78);
+            this.label4.Location = new System.Drawing.Point(149, 78);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(0, 0, 17, 0);
-            this.label4.Size = new System.Drawing.Size(168, 78);
+            this.label4.Size = new System.Drawing.Size(169, 78);
             this.label4.TabIndex = 6;
             this.label4.Text = "Correo:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,6 +111,10 @@ namespace CiudappReportes.Views.Technical
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.lblNoCarnet, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.lblTelefono, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.lblCorreo, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.lblNombre, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.label5, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 1);
@@ -121,6 +129,8 @@ namespace CiudappReportes.Views.Technical
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(642, 313);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
@@ -128,12 +138,12 @@ namespace CiudappReportes.Views.Technical
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semilight", 30F);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 30F);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(121, 156);
+            this.label5.Location = new System.Drawing.Point(118, 156);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(0, 0, 17, 0);
-            this.label5.Size = new System.Drawing.Size(197, 78);
+            this.label5.Size = new System.Drawing.Size(200, 78);
             this.label5.TabIndex = 7;
             this.label5.Text = "Teléfono:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -142,12 +152,12 @@ namespace CiudappReportes.Views.Technical
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 30F);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 30F);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(126, 0);
+            this.label2.Location = new System.Drawing.Point(123, 0);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 0, 17, 0);
-            this.label2.Size = new System.Drawing.Size(192, 78);
+            this.label2.Size = new System.Drawing.Size(195, 78);
             this.label2.TabIndex = 4;
             this.label2.Text = "Nombre:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -271,6 +281,58 @@ namespace CiudappReportes.Views.Technical
             this.AllReportsButton.Text = "Todos los reportes";
             this.AllReportsButton.UseVisualStyleBackColor = false;
             // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblNombre.Font = new System.Drawing.Font("Segoe UI Semilight", 25F);
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblNombre.Location = new System.Drawing.Point(324, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(108, 78);
+            this.lblNombre.TabIndex = 10;
+            this.lblNombre.Text = "label6";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblCorreo.Font = new System.Drawing.Font("Segoe UI Semilight", 25F);
+            this.lblCorreo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCorreo.Location = new System.Drawing.Point(324, 78);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(108, 78);
+            this.lblCorreo.TabIndex = 11;
+            this.lblCorreo.Text = "label6";
+            this.lblCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblTelefono
+            // 
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTelefono.Font = new System.Drawing.Font("Segoe UI Semilight", 25F);
+            this.lblTelefono.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTelefono.Location = new System.Drawing.Point(324, 156);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(108, 78);
+            this.lblTelefono.TabIndex = 12;
+            this.lblTelefono.Text = "label6";
+            this.lblTelefono.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblNoCarnet
+            // 
+            this.lblNoCarnet.AutoSize = true;
+            this.lblNoCarnet.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblNoCarnet.Font = new System.Drawing.Font("Segoe UI Semilight", 25F);
+            this.lblNoCarnet.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblNoCarnet.Location = new System.Drawing.Point(324, 234);
+            this.lblNoCarnet.Name = "lblNoCarnet";
+            this.lblNoCarnet.Size = new System.Drawing.Size(108, 79);
+            this.lblNoCarnet.TabIndex = 13;
+            this.lblNoCarnet.Text = "label6";
+            this.lblNoCarnet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // TechnicalProfilePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +343,7 @@ namespace CiudappReportes.Views.Technical
             this.Name = "TechnicalProfilePage";
             this.Text = "TechnicalProfilePage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.TechnicalProfilePage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
@@ -309,5 +372,9 @@ namespace CiudappReportes.Views.Technical
         private System.Windows.Forms.Button CreateReportButton;
         private System.Windows.Forms.Button AllReportsButton;
         private System.Windows.Forms.Button ReportAProblemButton;
+        private System.Windows.Forms.Label lblNoCarnet;
+        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Label lblCorreo;
+        private System.Windows.Forms.Label lblNombre;
     }
 }

@@ -28,29 +28,38 @@ namespace CiudappReportes.Views.Technical
             this.Close();
         }
 
-        private async void SignInButton_Click(object sender, EventArgs e)
+        private void SignInButton_Click(object sender, EventArgs e)
         {
             string sPass = encrypt.GetSHA256(entryPassword.Text.Trim());
 
             if (entryUserName.Text == null || sPass == null)
             {
-                await alert.DisplayAlert(Messages.LoginEmpty, Messages.ERROR);
+                alert.DisplayAlert(Messages.LoginEmpty, Messages.ERROR);
             }
             else
             {
-                /*if (autentication.AdminAutentication(entryUserName.Text, sPass))
+                if (autentication.SignInAutentication(entryUserName.Text, sPass))
                 {
-                    await alert.DisplayAlert(Messages.Welcome, Messages.Authentication);
-                    this.Hide();
-                    tpp.FormClosed += (s, args) => this.Close();
-                    tpp.Show();
+                    if (Session.Instance.myDict[Session.idRol] == "2")
+                    {
+                        alert.DisplayAlert($"{Messages.Welcome} {Session.Instance.myDict[Session.nombre]}", Messages.Authentication);
+                        this.Hide();
+                        tpp.FormClosed += (s, args) => this.Close();
+                        tpp.Show();
+                    }
+                    else
+                    {
+                        alert.DisplayAlert($"{Messages.ERROR} {Session.Instance.myDict[Session.nombre]} no tiene permisos de tecnico", Messages.Authentication);
+                        Session.Instance.myDict.Clear();
+                    }
+
                 }
                 else
                 {
-                    await alert.DisplayAlert(Messages.WrongUser, Messages.ERROR);
-                }*/
-            }
+                    alert.DisplayAlert(Messages.WrongUser, Messages.ERROR);
+                }
 
+            }
         }
     }
 }

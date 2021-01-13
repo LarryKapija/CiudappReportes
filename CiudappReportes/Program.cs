@@ -40,7 +40,7 @@ namespace CiudappReportes
                 .AddScoped<IAutentication, Autentication>()
 
             #region views
-                .AddSingleton<MainPage>()
+                .AddScoped<MainPage>()
                 .AddScoped<AdminLoginPage>()
                 .AddScoped<AdminProfilePage>()
                 .AddScoped<TechnicalLoginPage>()

@@ -40,7 +40,7 @@ namespace CiudappReportes.Views.Admin
             }
             else
             {
-                if ( autentication.AdminAutentication(entryUserName.Text, sPass))
+                if ( autentication.SignInAutentication(entryUserName.Text, sPass))
                 {
                     if (Session.Instance.myDict[Session.idRol] == "1")
                     {
@@ -52,8 +52,7 @@ namespace CiudappReportes.Views.Admin
                     else
                     {
                         alert.DisplayAlert($"{Messages.ERROR} {Session.Instance.myDict[Session.nombre]} no tiene permisos de administrador", Messages.Authentication);
-                        this.Hide();
-                        mainp.Show();
+                        Session.Instance.myDict.Clear();
                     }
 ;
                 }
